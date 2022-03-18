@@ -1,15 +1,30 @@
 // write 3 functions that accepts two arguments x and y
 // the first summing numbers
-function sum(x, y) {}
+function sum(x, y) {
+let sum=x+y;
+}
 // the second multiplying x,y
-function multiply(x, y) {}
+function multiply(x, y) {
+  let mult=x*y;
+}
 // the third divide numbers
-function divide(x, y) {}
+function divide(x, y) {
+    let div=x/y; 
+}
 // last check the maw between tow  numbers check
-function findMax(x, y) {}
+function findMax(x, y) {
+  if(x>=y)
+  {let max=x;}
+  else {let max=y;}
+}
 // exercise 1
 
-// Given the initial balance as bal and the amount X to be debited, where X must be a multiple of 10 and rupees 1.50 is deducted as the debit charge for each successful debit. The task is to find the remaining balance left after the transaction, which can be successful, or unsuccessful. The balances are in 2 floating-point precision.
+/*Given the initial balance as bal and the amount X to be debited,
+ where X must be a multiple of 10 and rupees 1.50 is deducted as the debit
+  charge for each successful debit. The task is to find the remaining balance
+   left after the transaction, which can be successful, or unsuccessful.
+    The balances are in 2 floating-point precision.
+*/
 
 // checkBalance(50,100.50)
 // Input: X = 50, bal = 100.50
@@ -20,13 +35,32 @@ function findMax(x, y) {}
 // Input: X = 55, bal = 99.00
 // Output: 99.00
 // Transaction unsuccessful
-function checkBalance(x, bal) {}
+function checkBalance(x, bal) {
+const i=10;
+const rupees=1.50;
+if(x%i==0)
+{
+  let balance=bal-x-rupees;
+  console.log(balance);
+  console.log("Transaction successful");
+}
+else
+{ console.log(bal);
+  console.log("Transaction unsuccessful");
+}
+}
 
 // exercise 2
 
-// In the game of golf, each hole has a par, meaning, the average number of strokes a golfer is expected to make in order to sink the ball in the hole to complete the play. Depending on how far above or below par your strokes are, there is a different nickname.
-
-// Your function will be passed par and strokes arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom
+/*  In the game of golf, each hole has a par,
+ meaning, the average number of strokes a golfer
+  is expected to make in order to sink the ball in
+   the hole to complete the play. Depending on how 
+   far above or below par your strokes are, there is a different nickname.
+/*
+/* Your function will be passed par and strokes arguments. 
+Return the correct string according to this table which lists
+ the strokes in order of priority; top (highest) to bottom*/
 
 const names = [
   "Hole-in-one!",
@@ -53,7 +87,19 @@ const names = [
 // golfScore(5, 2) should return the string Eagle
 // par and strokes will always be numeric and positive. We have added an array of all the names for your convenience.
 function golfScore(par, strokes) {
-  // Only change code below this line
+ if(strokes==1)
+ {return "Hole-in-one!";}
+ else if(strokes<=par-2)
+ {return "Eagle";}
+ else if(strokes==par-1)
+ {return "Birdie";}
+ else if(strokes==par)
+ {return "Par";}
+ else if(strokes==par+1)
+ {return "Bogey";}
+ else if(strokes==par+2)
+ {return "Double Bogey";}
+ else return "Go Home!";
 
   return "Change Me";
   // Only change code above this line
